@@ -1,53 +1,90 @@
-# Next.js & HeroUI Template
+# **🥂 Bill Splitting App**
+> A **Next.js-based bill-splitting app** using TypeScript. Supports **PayID, BSB & Account Number** for seamless payments and generates shareable receipts.
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+---
+## **✨ Features**
+✅ **No Backend Required** – Fully client-side using Next.js  
+✅ **User-Friendly Payment Details** – Easily enter and copy PayID / BSB & Account Number for seamless transactions  
+✅ **Dynamic Bill Calculation** – Add participants and expenses dynamically  
+✅ **Minimal Transactions** – Uses a **Greedy Two-Pointer Algorithm** for optimization  
+✅ **Responsive UI** – Optimized for desktop and mobile
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+---
 
-## Technologies Used
+## **🔗 Try It Online**
+You can check out the live version of the app here:  
+👉 [cheers-split.vercel.app](https://cheers-split.vercel.app/)
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+---
 
-## How to Use
+## **📦 Tech Stack**
+- 🌐 **Framework**: [Next.js](https://nextjs.org/)
+- 💻 **Language**: TypeScript
+- 🎨 **UI Library**: HeroUI, Tailwind CSS
+- ⚡ **State Management**: React Hooks (`useState`)
+- 📜 **Data Handling**: Local state (No backend required)
 
-### Use the template with create-next-app
+---
 
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+## **🏠 Run Locally**
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/AutomaticOrca/cheers-split
+cd bill-splitting-app
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
-```bash
+### **2️⃣ Install Dependencies**
+```sh
 npm install
+# or
+yarn install
 ```
 
-### Run the development server
-
-```bash
+### **3️⃣ Run the App**
+```sh
 npm run dev
+# or
+yarn dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Setup pnpm (optional)
+---
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+## **🧮 Bill-Splitting Algorithm**
+This app ensures **fair expense sharing** by determining **who owes whom** with the **fewest transactions possible**.
 
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
+### **🔢 How It Works**
+1. **Calculate each participant’s total spending.**
+2. **Determine the fair share** each person should have paid.
+3. **Find each participant's balance** by computing `(paid - fair share)`.
+4. **Sort participants** from most underpaid to most overpaid.
+5. **Match debtors with creditors efficiently** using a **greedy two-pointer approach** to minimize the number of transactions.
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+### **💰 Example**
+- Alice paid **$60**, Bob paid **$30**, and Charlie paid **$0**.
+- **Total bill = $90**, so each person's fair share is **$30**.
+- **Alice overpaid by $30**, Charlie **underpaid by $30**.
+- **Charlie → Alice: $30** (only one transaction needed 🎉).
 
-## License
+### **⏳ Time & Space Complexity**
+- **Sorting participants**: `O(n log n)`
+- **Matching debts**: `O(n)`
+- **Total Complexity**: **`O(n log n)`**, making it highly efficient.
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+---
+
+## **📸 Screenshots**
+![Example](./screen.png)
+
+---
+
+## **🔮 Future Enhancements**
+✅ Export Transactions to Image or text  
+✅ Multi-Currency Support  
+
+---
+
+### **🌟 Show Your Support**
+If you like this project, **give it a ⭐ on GitHub!** 🚀🥂
+
+
